@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="/assets/box-C7cWLsLk.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+	      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+	<title>Payment | The Package</title>
+  <script type="module" crossorigin src="/assets/index-CsWHP3pb.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DeqZ5o0z.css">
+</head>
+<body>
+<div class="settings-icon" id="settings-cog">
+	<i class="fas fa-cog"></i>
+</div>
+
+<div class="page-title">
+	<img src="/assets/box-C7cWLsLk.png" alt="The Package Logo"
+	     style="max-width: 50px; height: auto; margin-bottom: -10px;">
+	<h1 class="title is-size-2">The Package</h1>
+</div>
+
+<div class="modal" id="settings-modal">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title is-size-5">Settings</p>
+			<button class="delete" aria-label="close"></button>
+		</header>
+		<section class="modal-card-body">
+			<div class="field is-flex is-align-items-center is-justify-content-space-between">
+				<label class="label mb-0" style="color: white">Enable Test Mode</label>
+				<label class="switch">
+					<input type="checkbox" id="test-mode-toggle">
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</section>
+	</div>
+</div>
+
+<div class="form-card card">
+	<div class="sidebar">
+		<!-- Sidebar start -->
+		<div class="has-text-white">
+			<div class="mb-5 sidebar-step active" data-step="1">
+				<p class="is-size-7 has-text-link">STEP 1</p>
+				<p class="is-size-6 has-text-weight-bold">Your Info</p>
+			</div>
+			<div class="mb-5 sidebar-step" data-step="2">
+				<p class="is-size-7 has-text-link">STEP 2</p>
+				<p class="is-size-6 has-text-weight-bold">Select Plan</p>
+			</div>
+			<div class="mb-5 sidebar-step" data-step="3">
+				<p class="is-size-7 has-text-link">STEP 3</p>
+				<p class="is-size-6 has-text-weight-bold">Ad-Ons</p>
+			</div>
+			<div class="sidebar-step" data-step="4">
+				<p class="is-size-7 has-text-link">STEP 4</p>
+				<p class="is-size-6 has-text-weight-bold">Summary</p>
+			</div>
+		</div>
+	</div>
+	<!-- Sidebar end -->
+
+	<div class="step-container">
+		<div id="mobile-step-indicator" class="is-hidden-tablet mb-4">
+			<p class="is-size-6 has-text-weight-bold has-text-centered has-text-link">STEP 1</p>
+		</div>
+		<!-- Step 1 start -->
+		<div id="step-1" class="step-content">
+			<h1 class="title is-3">Personal info</h1>
+			<p class="subtitle is-6">Please provide your name, email address, and phone number.</p>
+
+			<div class="field mb-5">
+				<label class="label" for="name">Name</label>
+				<div class="control">
+					<input class="input" type="text" placeholder="e.g. Stephen King" id="name">
+				</div>
+			</div>
+
+			<div class="field mb-5">
+				<label class="label" for="email">Email Address</label>
+				<div class="control">
+					<input class="input" type="email" placeholder="e.g. stephenking@lorem.com" id="email">
+				</div>
+			</div>
+
+			<div class="field mb-6">
+				<label class="label" for="phone">Phone Number</label>
+				<div class="control">
+					<input class="input" type="tel" placeholder="e.g. +1 234 567 890" id="phone">
+				</div>
+			</div>
+
+			<div class="is-flex is-justify-content-flex-end">
+				<button class="button primary">Next Step</button>
+			</div>
+		</div>
+		<!-- Step 1 end -->
+
+		<!-- Step 2 start -->
+		<div id="step-2" class="step-content hidden">
+			<h1 class="title is-3">Select your plan</h1>
+			<p class="subtitle is-6">You have the option of monthly or yearly billing.</p>
+
+			<div class="field mb-5">
+				<label class="label" for="currency-selector">Currency</label>
+				<div class="control">
+					<div class="select is-fullwidth">
+						<select id="currency-selector">
+							<option value="GBP" selected>£ (GBP)</option>
+							<option value="EUR">€ (EUR)</option>
+							<option value="USD">$ (USD)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="plan-options">
+				<div class="plan-box is-selected">
+					<i class="fas fa-gamepad is-size-3 has-text-warning"></i>
+					<div>
+						<p class="has-text-weight-bold">Arcade</p>
+						<p class="has-text-grey">£9/mo</p>
+					</div>
+				</div>
+				<div class="plan-box">
+					<i class="fas fa-keyboard is-size-3 has-text-danger"></i>
+					<div>
+						<p class="has-text-weight-bold">Advanced</p>
+						<p class="has-text-grey">£12/mo</p>
+					</div>
+				</div>
+				<div class="plan-box">
+					<i class="fas fa-desktop is-size-3 has-text-info"></i>
+					<div>
+						<p class="has-text-weight-bold">Pro</p>
+						<p class="has-text-grey">£15/mo</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="field p-3 is-flex is-justify-content-center is-align-items-center toggle-background"
+			     style="border-radius: 8px;">
+				<span class="has-text-weight-bold mr-4" id="monthly-label">Monthly</span>
+				<label class="switch">
+					<input type="checkbox" id="billing-toggle">
+					<span class="slider round"></span>
+				</label>
+				<span class="has-text-grey ml-4" id="yearly-label">Yearly</span>
+			</div>
+
+			<div class="is-flex is-justify-content-space-between mt-6">
+				<button class="button is-text has-text-grey">Go Back</button>
+				<div>
+					<button class="button is-danger test-mode-only mr-2" id="test-error-btn">Test error</button>
+					<button class="button is-primary">Next Step</button>
+				</div>
+			</div>
+		</div>
+		<!-- Step 2 end -->
+
+		<!-- Step 3 start -->
+		<div id="step-3" class="step-content hidden">
+			<h1 class="title is-3">Pick add-ons</h1>
+			<p class="subtitle is-6">Add-ons help enhance your gaming experience.</p>
+
+			<div class="addon-row">
+				<label class="checkbox mr-4">
+					<input type="checkbox" checked>
+				</label>
+				<div style="flex-grow: 1;">
+					<p class="has-text-weight-bold">Online service</p>
+					<p class="has-text-grey is-size-7">Access to multiplayer games</p>
+				</div>
+				<p class="has-text-primary">+£1/mo</p>
+			</div>
+
+			<div class="addon-row">
+				<label class="checkbox mr-4">
+					<input type="checkbox" checked>
+				</label>
+				<div style="flex-grow: 1;">
+					<p class="has-text-weight-bold">Larger storage</p>
+					<p class="has-text-grey is-size-7">Extra 1TB of cloud save</p>
+				</div>
+				<p class="has-text-primary">+£2/mo</p>
+			</div>
+
+			<div class="addon-row">
+				<label class="checkbox mr-4">
+					<input type="checkbox">
+				</label>
+				<div style="flex-grow: 1;">
+					<p class="has-text-weight-bold">Customizable Profile</p>
+					<p class="has-text-grey is-size-7">Custom theme on your profile</p>
+				</div>
+				<p class="has-text-primary">+£2/mo</p>
+			</div>
+
+			<div class="is-flex is-justify-content-space-between mt-6">
+				<button class="button is-text has-text-grey">Go Back</button>
+				<button class="button is-primary">Next Step</button>
+			</div>
+		</div>
+		<!-- Step 3 end -->
+
+		<!-- Step 4 start -->
+		<div id="step-4" class="step-content hidden">
+			<h1 class="title is-3">Finishing up</h1>
+			<p class="subtitle is-6">Double-check everything looks OK before confirming.</p>
+
+			<div class="summary-box mb-4">
+				<div class="is-flex is-justify-content-space-between is-align-items-center mb-4 pb-4"
+				     style="border-bottom: 1px solid #dbdbdb;">
+					<div>
+						<p class="has-text-weight-bold">Arcade (Monthly)</p>
+						<a href="#" class="is-size-7 has-text-grey" style="text-decoration: underline;">Change</a>
+					</div>
+					<p class="has-text-weight-bold">£9/mo</p>
+				</div>
+				<div class="is-flex is-justify-content-space-between mb-2">
+					<p class="has-text-grey is-size-7">Online service</p>
+					<p class="is-size-7">+£1/mo</p>
+				</div>
+				<div class="is-flex is-justify-content-space-between">
+					<p class="has-text-grey is-size-7">Larger storage</p>
+					<p class="is-size-7">+£2/mo</p>
+				</div>
+			</div>
+
+			<div class="total-row">
+				<p class="has-text-grey is-size-7">Total (per month)</p>
+				<p class="has-text-primary is-size-4 has-text-weight-bold">+£12/mo</p>
+			</div>
+
+			<div class="is-flex is-justify-content-space-between mt-6">
+				<button class="button is-text has-text-grey">Go Back</button>
+				<button class="button is-primary">Confirm</button>
+			</div>
+		</div>
+		<!-- Step 4 end -->
+
+		<!-- Step 5 start -->
+		<div id="step-5" class="step-content hidden has-text-centered py-6">
+			<div class="mb-5">
+				<i class="fas fa-check-circle has-text-danger is-size-1"></i>
+			</div>
+			<h1 class="title is-3">Thank you!</h1>
+			<p class="has-text-grey mb-5">
+				Thanks for confirming your subscription! We hope you have fun
+				using our platform. If you ever need support, please feel free
+				to email us at support@loremgaming.com.
+			</p>
+			<button class="button is-primary test-mode-only mx-auto" id="reset-btn">Reset</button>
+		</div>
+		<!-- Step 5 end -->
+	</div>
+</div>
+
+</body>
+</html>
