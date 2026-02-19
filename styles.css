@@ -1,7 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
 
 :root {
-    background-color: #0b0e14;
     --primary-blue: #485fc7;
     --primary-glow: rgba(72, 95, 199, 0.4);
     --dark-blue: #111827;
@@ -9,6 +8,11 @@
     --bg-darker: #0b0e14;
     --text-grey: #9ca3af;
     --accent-cyan: #06b6d4;
+    --border-color: #1f2d40;
+    --card-bg: rgba(17, 24, 39, 0.8);
+    --box-bg: rgba(11, 14, 20, 0.4);
+    --box-bg-hover: rgba(11, 14, 20, 0.6);
+    --selection-bg: rgba(72, 95, 199, 0.05);
 }
 
 body {
@@ -19,7 +23,7 @@ body {
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
     color: #f8f9fa;
-    background: radial-gradient(circle at top left, #1e293b 0%, #0b0e14 100%);
+    background: radial-gradient(circle at top left, #1e293b 0%, var(--bg-darker) 100%);
 }
 
 .page-title {
@@ -39,7 +43,7 @@ body {
     width: 100%;
     margin: 1rem;
     display: flex;
-    background-color: rgba(17, 24, 39, 0.8);
+    background-color: var(--card-bg);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(72, 95, 199, 0.3);
     border-radius: 16px;
@@ -55,8 +59,6 @@ body {
     background-color: var(--sidebar-blue);
     backdrop-filter: blur(4px);
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    flex-direction: column;
 }
 
 .step-container {
@@ -87,7 +89,7 @@ body {
 
 .toggle-background {
 	background-color: var(--bg-darker);
-    border: 1px solid #1f2d40;
+    border: 1px solid var(--border-color);
 }
 
 .sidebar-step {
@@ -125,17 +127,20 @@ body {
     opacity: 0.8;
 }
 
+.plan-box, .addon-row {
+    border: 2px solid var(--border-color);
+    background-color: var(--box-bg);
+    border-radius: 12px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
 .plan-box {
     flex: 1;
-    border-radius: 12px;
     padding: 1.5rem;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    border: 2px solid #1f2d40;
-    background-color: rgba(11, 14, 20, 0.4);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .plan-box img {
@@ -143,41 +148,38 @@ body {
     width: 40px;
 }
 
-.plan-box:hover {
+.plan-box:hover, .addon-row:hover {
     border-color: var(--primary-blue);
-    background-color: rgba(11, 14, 20, 0.6);
+    background-color: var(--box-bg-hover);
+}
+
+.plan-box:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(72, 95, 199, 0.2);
 }
 
-.plan-box.is-selected {
+.addon-row:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(72, 95, 199, 0.1);
+}
+
+.plan-box.is-selected, .addon-row.is-selected {
     border-color: var(--primary-blue);
-    background-color: rgba(72, 95, 199, 0.05);
+    background-color: var(--selection-bg);
+}
+
+.plan-box.is-selected {
     box-shadow: 0 0 20px rgba(72, 95, 199, 0.15);
+}
+
+.addon-row.is-selected {
+    box-shadow: 0 0 15px rgba(72, 95, 199, 0.1);
 }
 
 .addon-row {
     display: flex;
     align-items: center;
-    border-radius: 12px;
     padding: 1.25rem;
     margin-bottom: 1rem;
-    border: 2px solid #1f2d40;
-    background-color: rgba(11, 14, 20, 0.4);
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.addon-row:hover {
-    border-color: var(--primary-blue);
-    background-color: rgba(11, 14, 20, 0.6);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(72, 95, 199, 0.1);
-}
-
-.addon-row.is-selected {
-    border-color: var(--primary-blue);
-    background-color: rgba(72, 95, 199, 0.05);
-    box-shadow: 0 0 15px rgba(72, 95, 199, 0.1);
 }
 
 .summary-box {
@@ -193,7 +195,6 @@ body {
     align-items: center;
 }
 
-/* Buttons refinement */
 .button {
     border-radius: 8px;
     font-weight: 500;
@@ -216,10 +217,9 @@ body {
     transform: translateY(-1px);
 }
 
-/* Inputs refinement */
 .input, .select select {
     background-color: var(--bg-darker) !important;
-    border: 1px solid #1f2d40 !important;
+    border: 1px solid var(--border-color) !important;
     color: white !important;
     border-radius: 8px !important;
     transition: border-color 0.2s;
@@ -243,7 +243,6 @@ body {
     color: var(--text-grey) !important;
 }
 
-/* Switch toggle */
 .switch {
   position: relative;
   display: inline-block;
@@ -297,7 +296,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* Tooltip styles */
 .currency-tooltip {
     position: absolute;
     background: #e54e4e;
@@ -327,7 +325,6 @@ input:checked + .slider:before {
     position: relative;
 }
 
-/* Settings Icon */
 .settings-icon {
     position: fixed;
     top: 2rem;
@@ -342,7 +339,6 @@ input:checked + .slider:before {
     color: lightsteelblue;
 }
 
-/* Settings Modal - Simple Bulma Modal */
 #settings-modal .modal-card {
     max-width: 300px;
     border-radius: 20px;
@@ -354,7 +350,7 @@ input:checked + .slider:before {
 }
 #settings-modal .modal-card-head {
     background-color: #1f2d40;
-    border-bottom: 1px solid #0b0e14;
+    border-bottom: 1px solid var(--bg-darker);
 }
 
 #settings-modal .modal-card-title {
@@ -436,7 +432,6 @@ input:checked + .slider:before {
         flex-direction: column;
     }
 
-    /* Fixed buttons at the bottom for mobile */
     .step-container {
         padding-bottom: 6rem;
     }
@@ -451,6 +446,6 @@ input:checked + .slider:before {
         margin-top: 0 !important;
         box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
         z-index: 10;
-        border-top: 1px solid #1f2d40;
+        border-top: 1px solid var(--border-color);
     }
 }
