@@ -32,3 +32,9 @@ npm run dev
 ```
 
 The application will be available at the port specified by Vite in the terminal.
+
+## Test Mode
+
+You can enter "Test mode" of the site via the cogwheel in the top left
+- Ability to test what would happen if the currency API failed (Test Error button)
+- Ability to reset form with a button at the end (Reset button)
