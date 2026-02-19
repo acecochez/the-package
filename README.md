@@ -2,6 +2,8 @@
 
 A multi-step subscription form for gamers, allowing users to select plans, add-ons, and currencies.
 
+![img.png](img.png)
+
 ## Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
